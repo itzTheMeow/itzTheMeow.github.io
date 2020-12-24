@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Nevis";
+  font-style: normal;
+  font-weight: normal;
+  src: url("./Nevis.ttf");
+}
+
+body {
+  background-color: #2c2f33;
+  color: black;
+}
+
+#aboutcard {
+  display: block;
+  box-sizing: border-box;
+  background-color: #ff9100;
+  box-shadow: 12px 12px 0px 0px #ffffff;
+  width: 60vw;
+  height: 60vh;
+  border-radius: 20px;
+  margin: 20vh auto 20vh auto;
+  text-align: center;
+  padding-top: 6px;
+}
+.aboutcard-title {
+  display: block;
+  font-family: "Nevis";
+  font-size: 40px;
+}
