@@ -61,7 +61,42 @@ window.onload = function () {
       tippy(`#${id}`, {
         content: content || "Unknown",
         allowHTML: true,
-        animation: "shift-away-subtle",
+        duration: [300, 0],
+      });
+    });
+    document.querySelectorAll("[tooltip-for]").forEach((tt) => {
+      let tipFor = tt.getAttribute("tooltip-for");
+      let content = "Click It";
+
+      switch (tipFor) {
+        case "discord":
+          content = "Join my Discord server!";
+          break;
+        case "github":
+          content = "Check out my GitHub for random projects.";
+          break;
+        case "youtube":
+          content = "See my <s>dead</s> YouTube channel.";
+          break;
+        case "reddit":
+          content = "Stalk me on Reddit.";
+          break;
+        case "twitter":
+          content = "See me do absolutely nothing on Twitter.";
+          break;
+        case "twitch":
+          content = "See me stream nothing on Twitch.";
+          break;
+        case "instagram":
+          content = "See me post nothing on Instagram.";
+          break;
+        case "steam":
+          content = "See my imaginary game library.";
+          break;
+      }
+      tippy(`[tooltip-for="${tipFor}"]`, {
+        content: content || "Click It",
+        allowHTML: true,
         duration: [300, 0],
       });
     });
