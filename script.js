@@ -28,3 +28,42 @@ function openLink(lnk) {
       alert("NO");
   }
 }
+
+window.onload = function () {
+  setTimeout(function () {
+    document.querySelectorAll("[lang-quality]").forEach((lang) => {
+      let id = "tp" + Math.floor(Math.random() * 100000);
+      lang.id = id;
+
+      let quality = Number(lang.getAttribute("lang-quality"));
+
+      let content = "Unknown";
+      switch (quality) {
+        case 5:
+          content = "Master (5/5)";
+          break;
+        case 4:
+          content = "Proficient (4/5)";
+          break;
+        case 3:
+          content = "Good (3/5)";
+          break;
+        case 2:
+          content = "Beginner (2/5)";
+          break;
+        case 1:
+          content = "Not too Great (1/5)";
+          break;
+      }
+
+      content = `<span lang-quality="${quality}">${content}</span>`;
+
+      tippy(`#${id}`, {
+        content: content || "Unknown",
+        allowHTML: true,
+        animation: "shift-away-subtle",
+        duration: [300, 0],
+      });
+    });
+  }, 1000);
+};

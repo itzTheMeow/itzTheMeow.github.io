@@ -59,8 +59,15 @@ body {
   margin-bottom: 4px;
 }
 .aboutcard-lang {
-  width: 60%;
+  width: 10vw;
   text-align: left;
+  margin-left: 25vw;
+  background-color: var(--darker);
+  color: var(--text-white);
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0px 0px var(--white);
 }
 .aboutcard-links {
   display: block;
