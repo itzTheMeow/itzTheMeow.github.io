@@ -28,6 +28,9 @@ body {
   font-family: "Nevis";
   font-size: 40px;
 }
+.aboutcard-text {
+  font-family: "Nevis"
+}
 .aboutcard-links {
   display: block;
   position: absolute;
