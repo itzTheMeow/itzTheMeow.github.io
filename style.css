@@ -37,8 +37,9 @@ body {
 .aboutcard-text {
   font-family: "Nevis";
 }
-.aboutcard-languages ul {
-  list-style: none;
+.aboutcard-languages {
+  width: 60%;
+  text-align: left;
 }
 .aboutcard-links {
   display: block;
