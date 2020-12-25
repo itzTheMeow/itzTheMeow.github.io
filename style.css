@@ -5,16 +5,34 @@
   src: url("./Nevis.ttf");
 }
 
+:root {
+  --orange: #ff9100;
+  --white: #ffffff;
+  --text-black: #000000;
+  --text-white: #dcddde;
+  --dark: #2c2f33;
+  --darker: #23272a;
+
+  --discord: #7289da;
+  --github: #171515;
+  --youtube: #ff0000;
+  --reddit: #ff4500;
+  --twitter: #1da1f3;
+  --twitch: #9146ff;
+  --instagram: #000000;
+  --steam: #000000;
+}
+
 body {
-  background-color: #2c2f33;
-  color: black;
+  background-color: var(--dark);
+  color: var(--text-black);
 }
 
 #aboutcard {
   display: block;
   box-sizing: border-box;
-  background-color: #ff9100;
-  box-shadow: 12px 12px 0px 0px #ffffff;
+  background-color: var(--orange);
+  box-shadow: 12px 12px 0px 0px var(--white);
   width: 60vw;
   height: 60vh;
   border-radius: 20px;
@@ -55,26 +73,26 @@ body {
 }
 
 .aboutcard-links .fa-discord {
-  color: #7289da;
+  color: var(--discord);
 }
 .aboutcard-links .fa-github {
-  color: #171515;
+  color: var(--github);
 }
 .aboutcard-links .fa-youtube {
-  color: #ff0000;
+  color: var(--youtube);
 }
 .aboutcard-links .fa-reddit {
-  color: #ff4500;
+  color: var(--reddit);
 }
 .aboutcard-links .fa-twitter {
-  color: #1da1f3;
+  color: var(--twitter);
 }
 .aboutcard-links .fa-twitch {
-  color: #9146ff;
+  color: var(--twitch);
 }
 .aboutcard-links .fa-instagram {
-  color: #000000;
+  color: var(--instagram);
 }
 .aboutcard-links .fa-steam {
-  color: #000000;
+  color: var(--steam);
 }
