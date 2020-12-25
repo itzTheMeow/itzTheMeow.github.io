@@ -13,6 +13,12 @@
   --dark: #2c2f33;
   --darker: #23272a;
 
+  --intensity-5: #35ff35;
+  --intensity-4: #b8ff35;
+  --intensity-3: #fffc35;
+  --intensity-2: #ffa135;
+  --intensity-1: #ff5335;
+
   --discord: #7289da;
   --github: #171515;
   --youtube: #ff0000;
@@ -66,6 +72,22 @@ body {
 .aboutcard-links * {
   cursor: pointer;
   margin-left: 2px;
+}
+
+[lang-quality="5"] {
+  color: var(--intensity-5);
+}
+[lang-quality="4"] {
+  color: var(--intensity-4);
+}
+[lang-quality="3"] {
+  color: var(--intensity-3);
+}
+[lang-quality="2"] {
+  color: var(--intensity-2);
+}
+[lang-quality="1"] {
+  color: var(--intensity-1);
 }
 
 .aboutcard-links .fa-discord {
