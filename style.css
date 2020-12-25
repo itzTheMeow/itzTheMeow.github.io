@@ -31,7 +31,8 @@ body {
 .aboutcard-subtitle {
   display: block;
   font-family: "Nevis";
-  font-size: 28px;
+  font-size: 24px;
+  margin-top: 4px;
 }
 .aboutcard-text {
   font-family: "Nevis";
