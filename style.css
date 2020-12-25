@@ -28,8 +28,13 @@ body {
   font-family: "Nevis";
   font-size: 40px;
 }
+.aboutcard-subtitle {
+  display: block;
+  font-family: "Nevis";
+  font-size: 28px;
+}
 .aboutcard-text {
-  font-family: "Nevis"
+  font-family: "Nevis";
 }
 .aboutcard-links {
   display: block;
