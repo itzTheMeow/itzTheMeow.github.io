@@ -59,9 +59,9 @@ body {
   margin-bottom: 4px;
 }
 .aboutcard-lang {
-  width: 10vw;
+  width: 20vw;
   text-align: left;
-  margin-left: 25vw;
+  margin-left: 20vw;
   background-color: var(--darker);
   color: var(--text-white);
   padding: 8px;
