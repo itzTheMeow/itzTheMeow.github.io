@@ -1,4 +1,4 @@
-window.APIURL = "https://themeowdotmlbackend.herokuapp.com";
+window.APIURL = "https://meow-user-fetch.herokuapp.com";
 
 let getUser = (id, tkn) => {
   return new Promise((acc, rej) => {
