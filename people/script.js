@@ -31,7 +31,7 @@ Error: ${err}`);
       let usersDone = function () {
         if (allUsers.length !== users.length) return;
         allUsers = allUsers.sort((a, b) =>
-          (b.name || b.username) > (a.name || a.username) ? 1 : -1
+          (a.name || a.username).toLowerCase() > (b.name || b.username).toLowerCase() ? 1 : -1
         );
         allUsers.forEach((user) => {
           let flags = user.formatted_flags;
