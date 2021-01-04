@@ -1,6 +1,8 @@
+window.APIURL = "https://themeowdotmlbackend.herokuapp.com";
+
 let getUser = (id, tkn) => {
   return new Promise((acc, rej) => {
-    fetch(`https://meowdotml-people-token.glitch.me/user/${id}`)
+    fetch(`${APIURL}/user/${id}`)
       .then((res) => res.json())
       .then((user) => {
         acc({
