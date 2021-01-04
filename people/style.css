@@ -1,0 +1,43 @@
+.cards {
+  box-sizing: border-box;
+}
+
+.user-card {
+  width: 25vw;
+  height: 15vw;
+  display: inline-block;
+  margin: 6px;
+  background-color: var(--orange);
+  color: var(--text-black);
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0px 0px var(--white);
+  position: relative;
+}
+
+.user-card-title {
+  font-size: 22px;
+}
+.user-card-subtitle {
+  font-size: 12px;
+}
+.user-card-subtitle-discrim {
+  font-size: 10px;
+  color: var(--dark);
+}
+
+.user-card-description {
+  padding-left: 10px;
+  position: relative;
+}
+.user-card-description:before {
+  content: "";
+  height: 100%;
+  width: 4px;
+  border-radius: 4px;
+  background: var(--white);
+  display: block;
+  position: absolute;
+  left: 0;
+}
