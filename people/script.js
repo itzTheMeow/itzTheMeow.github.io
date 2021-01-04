@@ -1,4 +1,4 @@
-let getUser = () => {
+let getToken = () => {
   var url = "https://discord.com/api/oauth2/token";
 
 var xhr = new XMLHttpRequest();
@@ -17,3 +17,4 @@ var data = "grant_type=client_credentials&scope=identify";
 
 xhr.send(data);
 }
+getToken()
