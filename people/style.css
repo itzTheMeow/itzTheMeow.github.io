@@ -62,18 +62,18 @@
 }
 
 .tippy-box[data-theme~="success"] {
-  background-color: #0de940;
-  color: var(--dark);
+  background-color: #28a745;
+  color: var(--text-white);
 }
 .tippy-box[data-theme~="success"][data-placement^="top"] > .tippy-arrow::before {
-  border-top-color: #0de940;
+  border-top-color: #28a745;
 }
 .tippy-box[data-theme~="success"][data-placement^="bottom"] > .tippy-arrow::before {
-  border-bottom-color: #0de940;
+  border-bottom-color: #28a745;
 }
 .tippy-box[data-theme~="success"][data-placement^="left"] > .tippy-arrow::before {
-  border-left-color: #0de940;
+  border-left-color: #28a745;
 }
 .tippy-box[data-theme~="success"][data-placement^="right"] > .tippy-arrow::before {
-  border-right-color: #0de940;
+  border-right-color: #28a745;
 }
