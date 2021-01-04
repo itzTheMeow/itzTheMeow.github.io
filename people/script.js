@@ -14,4 +14,16 @@ let getToken = () => {
       });
   });
 };
-getToken().then(console.log);
+let getUser = (id, tkn) => {
+  return new Promise((acc, rej) => {
+    fetch(`https://discord.com/api/v8/users/${id}`, {
+      headers: { Authorization: `Bearer ${tkn}` },
+    })
+      .then((res) => res.json())
+      .then(console.log)
+      .catch(rej);
+  });
+};
+getToken().then((token) => {
+  getUser("609286417981505557", token);
+});
