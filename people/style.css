@@ -13,7 +13,6 @@
   box-sizing: border-box;
   border-radius: 8px;
   box-shadow: 5px 5px 0px 0px var(--white);
-  position: relative;
 }
 
 .user-card-title {
@@ -22,6 +21,8 @@
 }
 .user-card-subtitle {
   font-size: 12px;
+  width: fit-content;
+  cursor: pointer;
 }
 .user-card-subtitle-discrim {
   font-size: 10px;
@@ -58,4 +59,21 @@
     width: auto;
     height: auto;
   }
+}
+
+.tippy-box[data-theme~="success"] {
+  background-color: #28a745;
+  color: var(--text-white);
+}
+.tippy-box[data-theme~="success"][data-placement^="top"] > .tippy-arrow::before {
+  border-top-color: #28a745;
+}
+.tippy-box[data-theme~="success"][data-placement^="bottom"] > .tippy-arrow::before {
+  border-bottom-color: #28a745;
+}
+.tippy-box[data-theme~="success"][data-placement^="left"] > .tippy-arrow::before {
+  border-left-color: #28a745;
+}
+.tippy-box[data-theme~="success"][data-placement^="right"] > .tippy-arrow::before {
+  border-right-color: #28a745;
 }

@@ -86,7 +86,36 @@ Error: ${err}`);
           let cardSubtitle = document.createElement("div");
           cardSubtitle.className = "user-card-subtitle";
           cardSubtitle.innerHTML = `${user.username}<span class="user-card-subtitle-discrim">#${user.discriminator}</span>`;
+          cardSubtitle.onclick = function () {
+            var input = document.body.appendChild(document.createElement("input"));
+            input.value = user.tag;
+            input.focus();
+            input.select();
+            document.execCommand("copy");
+            input.parentNode.removeChild(input);
+            old.destroy();
+            let newt = tippy(cardSubtitle, {
+              content: "Copied!",
+              allowHTML: true,
+              duration: [200, 0],
+              theme: "success",
+            });
+            newt.show();
+            setTimeout(function () {
+              newt.destroy();
+              old = tippy(cardSubtitle, {
+                content: "Copy Tag",
+                allowHTML: true,
+                duration: [200, 0],
+              });
+            }, 1500);
+          };
           card.appendChild(cardSubtitle);
+          let old = tippy(cardSubtitle, {
+            content: "Copy Tag",
+            allowHTML: true,
+            duration: [200, 0],
+          });
 
           let cardDescription = document.createElement("div");
           cardDescription.className = "user-card-description";
