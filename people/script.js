@@ -1,8 +1,6 @@
 let getToken = () => {
-  var url = "https://discord.com/api/v8/oauth2/token";
-
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", url);
+  xhr.open("POST", "https://discord.com/api/v8/oauth2/token");
 
   xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
   xhr.setRequestHeader(
