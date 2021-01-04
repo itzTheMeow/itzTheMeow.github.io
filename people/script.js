@@ -19,7 +19,7 @@ window.onload = function () {
       users.forEach((u) => {
         getUser(u)
           .then((user) => {
-            console.log("[i] Fetched " + user.tag);
+            console.log(`[i] Fetched ${user.tag}`, user);
             allUsers.push(user);
             usersDone();
           })
@@ -34,6 +34,8 @@ Error: ${err}`);
           (b.name || b.username) > (a.name || a.username) ? 1 : -1
         );
         allUsers.forEach((user) => {
+          let flags = user.formatted_flags;
+
           let card = document.createElement("div");
           card.className = "user-card";
 
@@ -41,6 +43,45 @@ Error: ${err}`);
           cardTitle.className = "user-card-title";
           cardTitle.innerHTML = user.name || user.username;
           card.appendChild(cardTitle);
+
+          let cardBadges = document.createElement("div");
+          cardBadges.className = "user-card-badges";
+
+          let badges = [];
+          if (flags.staff) badges.push(`staff`);
+          if (flags.hypesquad_events) badges.push(`hs_events`);
+          if (flags.house !== "NONE") badges.push(`hs_${flags.house.toLowerCase()}`);
+          if (flags.bughunter) badges.push(`bughunter_${flags.bughunter}`);
+          if (flags.developer) badges.push(`developer`);
+          if (flags.partner) badges.push(`partner`);
+          if (flags.early_supporter) badges.push(`early_supporter`);
+
+          badges.forEach((b) => {
+            let badge = document.createElement("img");
+            badge.src = `../badges/${b}.png`;
+            badge.className = "user-card-badge";
+
+            let badgeTexts = {
+              bughunter_1: "Bug Hunter Level 1",
+              bughunter_2: "Bug Hunter Level 2",
+              developer: "Early Verified Developer",
+              early_supporter: "Early Supporter",
+              hs_balance: "Hypesquad Balance",
+              hs_bravery: "Hypesquad Bravery",
+              hs_brilliance: "Hypesquad Brilliance",
+              hs_events: "Hypesquad Events",
+              partner: "Partner (uwu)",
+              staff: "Discord Staff",
+            };
+
+            cardBadges.appendChild(badge);
+            tippy(badge, {
+              content: badgeTexts[b] || "Unknown",
+              allowHTML: true,
+              duration: [200, 0],
+            });
+          });
+          card.appendChild(cardBadges);
 
           let cardSubtitle = document.createElement("div");
           cardSubtitle.className = "user-card-subtitle";
