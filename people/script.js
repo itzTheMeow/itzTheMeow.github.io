@@ -4,7 +4,6 @@ let getToken = () => {
   var xhr = new XMLHttpRequest();
   xhr.open("POST", url);
 
-  //xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
   xhr.setRequestHeader(
     "Authorization",
     "Basic Nzk1MTI2NTc0NjU0ODE2MjY3Om9pSGZJalRSWHZNWGNhMnRtZnVHdEZ4UUd2LVFudm5h"
