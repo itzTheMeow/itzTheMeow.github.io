@@ -1,0 +1,74 @@
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<textarea id="in" placeholder="Input"></textarea>
+<textarea id="text" placeholder="Output"></textarea>
+<button id="done">Done</button>
+
+<script>
+  let dictionary = {
+    𝙰: "A",
+    𝙱: "B",
+    𝙲: "C",
+    𝙳: "D",
+    𝙴: "E",
+    𝙵: "F",
+    𝙶: "G",
+    𝙷: "H",
+    𝙸: "I",
+    𝙹: "J",
+    𝙺: "K",
+    𝙻: "L",
+    𝙼: "M",
+    𝙽: "N",
+    𝙾: "O",
+    𝙿: "P",
+    𝚀: "Q",
+    𝚁: "R",
+    𝚂: "S",
+    𝚃: "T",
+    𝚄: "U",
+    𝚅: "V",
+    𝚆: "W",
+    𝚇: "X",
+    𝚈: "Y",
+    𝚉: "Z",
+    𝚊: "a",
+    𝚋: "b",
+    𝚌: "c",
+    𝚍: "d",
+    𝚎: "e",
+    𝚏: "f",
+    𝚐: "g",
+    𝚑: "h",
+    𝚒: "i",
+    𝚓: "j",
+    𝚔: "k",
+    𝚕: "l",
+    𝚖: "m",
+    𝚗: "n",
+    𝚘: "o",
+    𝚙: "p",
+    𝚚: "q",
+    𝚛: "r",
+    𝚜: "s",
+    𝚝: "t",
+    𝚞: "u",
+    𝚟: "v",
+    𝚠: "w",
+    𝚡: "x",
+    𝚢: "y",
+    𝚣: "z",
+  };
+
+  document.getElementById("done").onclick = function () {
+    let newStr = "";
+    let inp = document.getElementById("in");
+
+    [...inp.value].forEach((c) => {
+      newStr += dictionary[c] || c;
+    });
+    newStr = newStr.replace(/\u200b/g, "");
+    document.getElementById("text").value = newStr;
+  };
+</script>
