@@ -39,10 +39,12 @@ Error: ${err}`);
           let card = document.createElement("div");
           card.className = "user-card";
 
+          let cardHeader = document.createElement("div");
+
           let cardTitle = document.createElement("div");
           cardTitle.className = "user-card-title";
           cardTitle.innerHTML = user.name || user.username;
-          card.appendChild(cardTitle);
+          cardHeader.appendChild(cardTitle);
 
           let cardBadges = document.createElement("div");
           cardBadges.className = "user-card-badges";
@@ -81,7 +83,8 @@ Error: ${err}`);
               duration: [200, 0],
             });
           });
-          card.appendChild(cardBadges);
+          cardHeader.appendChild(cardBadges);
+          card.appendChild(cardHeader);
 
           let cardSubtitle = document.createElement("div");
           cardSubtitle.className = "user-card-subtitle";
