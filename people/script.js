@@ -128,32 +128,43 @@ Error: ${err}`);
           interests = interests.sort((a, b) =>
             interestDB[a].toLowerCase() > interestDB[b].toLowerCase() ? 1 : -1
           );
-          interests.forEach((i) => {
-            switch (i) {
-              case "programming":
-                let programming = document.createElement("div");
-                programming.className = "user-card-interest";
-                programming.innerHTML = `<i class="fas fa-laptop-code" style="color:#3e70dd;"></i> Developer`;
-                cardInterests.appendChild(programming);
-                tippy(programming, {
-                  content: "Likes to code.",
-                  allowHTML: true,
-                  duration: [200, 0],
-                });
-                break;
-              case "minecraft":
-                let minecraft = document.createElement("div");
-                minecraft.className = "user-card-interest";
-                minecraft.innerHTML = `<img src="../badges/minecraft.png"> Minecraft`;
-                cardInterests.appendChild(minecraft);
-                tippy(minecraft, {
-                  content: "Plays Minecraft.",
-                  allowHTML: true,
-                  duration: [200, 0],
-                });
-                break;
-            }
-          });
+          if (!interests.length) {
+            let noInterests = document.createElement("div");
+            noInterests.className = "user-card-interest";
+            noInterests.innerHTML = `<i class="fas fa-times-circle" style="color:#ff594d;"></i> No Interests`;
+            cardInterests.appendChild(noInterests);
+            tippy(noInterests, {
+              content: "This user has no interests.",
+              allowHTML: true,
+              duration: [200, 0],
+            });
+          } else
+            interests.forEach((i) => {
+              switch (i) {
+                case "programming":
+                  let programming = document.createElement("div");
+                  programming.className = "user-card-interest";
+                  programming.innerHTML = `<i class="fas fa-laptop-code" style="color:#3e70dd;"></i> Developer`;
+                  cardInterests.appendChild(programming);
+                  tippy(programming, {
+                    content: "Likes to code.",
+                    allowHTML: true,
+                    duration: [200, 0],
+                  });
+                  break;
+                case "minecraft":
+                  let minecraft = document.createElement("div");
+                  minecraft.className = "user-card-interest";
+                  minecraft.innerHTML = `<img src="../badges/minecraft.png"> Minecraft`;
+                  cardInterests.appendChild(minecraft);
+                  tippy(minecraft, {
+                    content: "Plays Minecraft.",
+                    allowHTML: true,
+                    duration: [200, 0],
+                  });
+                  break;
+              }
+            });
 
           card.appendChild(cardInterests);
 
