@@ -117,6 +117,46 @@ Error: ${err}`);
             duration: [200, 0],
           });
 
+          let cardInterests = document.createElement("div");
+          cardInterests.className = "user-card-interests";
+
+          let interests = user.interests || [];
+          let interestDB = {
+            minecraft: "Minecraft",
+            programming: "Developer",
+          };
+          interests = interests.sort((a, b) =>
+            interestDB[a].toLowerCase() > interestDB[b].toLowerCase() ? 1 : -1
+          );
+          interests.forEach((i) => {
+            switch (i) {
+              case "programming":
+                let programming = document.createElement("div");
+                programming.className = "user-card-interest";
+                programming.innerHTML = `<i class="fas fa-laptop-code" style="color:#3e70dd;"></i> Developer`;
+                cardInterests.appendChild(programming);
+                tippy(programming, {
+                  content: "Likes to code.",
+                  allowHTML: true,
+                  duration: [200, 0],
+                });
+                break;
+              case "minecraft":
+                let minecraft = document.createElement("div");
+                minecraft.className = "user-card-interest";
+                minecraft.innerHTML = `<img src="../badges/minecraft.png"> Minecraft`;
+                cardInterests.appendChild(minecraft);
+                tippy(minecraft, {
+                  content: "Plays Minecraft.",
+                  allowHTML: true,
+                  duration: [200, 0],
+                });
+                break;
+            }
+          });
+
+          card.appendChild(cardInterests);
+
           let cardDescription = document.createElement("div");
           cardDescription.className = "user-card-description";
           cardDescription.innerHTML = user.description || "No description provided.";

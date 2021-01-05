@@ -18,11 +18,13 @@
 .user-card-title {
   font-size: 22px;
   display: inline-block;
+  margin-bottom: -2px;
 }
 .user-card-subtitle {
   font-size: 12px;
   width: fit-content;
   cursor: pointer;
+  margin-bottom: 4px;
 }
 .user-card-subtitle-discrim {
   font-size: 10px;
@@ -52,6 +54,20 @@
   height: 1em;
   vertical-align: top;
   margin-left: 4px;
+}
+
+.user-card-interests {
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+.user-card-interest {
+  display: inline;
+  margin-right: 4px;
+  cursor: default;
+}
+.user-card-interest img {
+  height: 1em;
+  vertical-align: text-top;
 }
 
 @media only screen and (max-device-width: 800px) {
