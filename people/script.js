@@ -43,7 +43,9 @@ Error: ${err}`);
 
           let cardTitle = document.createElement("div");
           cardTitle.className = "user-card-title";
-          cardTitle.innerHTML = user.name || user.username;
+          cardTitle.innerHTML = `<img src="${user.avatarURL}" alt="AVTR" class="user-card-avatar">${
+            user.name || user.username
+          }`;
           cardHeader.appendChild(cardTitle);
 
           let cardBadges = document.createElement("div");
