@@ -123,7 +123,7 @@ Error: ${err}`);
           });
 
           let cardAliases = document.createElement("div");
-          cardAliases.className = "user-card-subtitle";
+          cardAliases.className = "user-card-aliases";
 
           let aliases = (user.aliases || []).join(", ");
           cardAliases.innerHTML = `<span class="user-card-subtitle-discrim">A.K.A.</span> ${aliases}`;

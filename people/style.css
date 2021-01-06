@@ -28,6 +28,11 @@
   cursor: pointer;
   margin-bottom: 4px;
 }
+.user-card-aliases {
+  font-size: 12px;
+  width: fit-content;
+  margin-bottom: 4px;
+}
 .user-card-subtitle-discrim {
   font-size: 10px;
   opacity: 0.8;
@@ -64,6 +69,8 @@
   height: 1em;
   vertical-align: top;
   margin-left: 4px;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 
 .user-card-interests {
@@ -78,6 +85,8 @@
 .user-card-interest img {
   height: 1em;
   vertical-align: text-top;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 
 @media only screen and (max-device-width: 800px) {
