@@ -10,6 +10,8 @@
   --white: #ffffff;
   --text-black: #000000;
   --text-white: #dcddde;
+  --link: #32c5ff;
+  --link-darker: #2591bb;
   --dark: #2c2f33;
   --darker: #23272a;
 
@@ -33,6 +35,14 @@ body {
   background-color: var(--dark);
   color: var(--text-black);
   font-family: "Nevis";
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--link-darker);
 }
 
 #aboutcard {
