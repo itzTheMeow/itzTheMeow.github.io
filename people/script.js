@@ -120,6 +120,13 @@ Error: ${err}`);
             duration: [200, 0],
           });
 
+          let cardAliases = document.createElement("div");
+          cardAliases.className = "user-card-subtitle";
+
+          let aliases = (user.aliases || []).join(", ");
+          cardAliases.innerHTML = `<span class="user-card-subtitle-discrim">A.K.A.</span> ${aliases}`;
+          if (aliases) card.appendChild(cardAliases);
+
           let cardInterests = document.createElement("div");
           cardInterests.className = "user-card-interests";
 
