@@ -185,6 +185,13 @@ Error: ${err}`);
           cardDescription.innerHTML = user.description || "No description provided.";
           card.appendChild(cardDescription);
 
+          let cardLink = document.createElement("div");
+          cardLink.className = "user-card-interests";
+
+          let link = user.link || "about:blank";
+
+          card.appendChild(cardLink);
+
           document.getElementById("cards").appendChild(card);
         });
       };
