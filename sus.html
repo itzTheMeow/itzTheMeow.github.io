@@ -66,7 +66,7 @@
     let inp = document.getElementById("in");
 
     [...inp.value].forEach((c) => {
-      newStr += dictionary[c] || c;
+      newStr += dictionary[c] || c.trim() || " ";
     });
     newStr = newStr.replace(/\u200b/g, "");
     document.getElementById("text").value = newStr;
