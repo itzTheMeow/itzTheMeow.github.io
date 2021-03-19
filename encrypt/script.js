@@ -53,7 +53,7 @@ document.getElementById("ec-decr").onclick = function () {
     let found = false;
     [...alphabet].forEach((a) => {
       if (a === c) {
-        decrypted += alphabet[key.indexOf(a)];
+        decrypted += alphabet[key.indexOf(a)] || "";
         found = true;
       }
     });
