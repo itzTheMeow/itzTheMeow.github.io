@@ -69,15 +69,28 @@ a:hover {
   margin-bottom: 4px;
 }
 .aboutcard-lang {
-  width: 30vw;
+  width: 28vw;
   text-align: left;
-  margin-left: 15vw;
   background-color: var(--darker);
   color: var(--text-white);
   padding: 8px;
   box-sizing: border-box;
   border-radius: 8px;
   box-shadow: 5px 5px 0px 0px var(--white);
+  margin: 1vw;
+}
+.aboutcard-lang img {
+  width: 1em;
+  height: 1em;
+  vertical-align: top;
+  margin-right: -0.15em;
+}
+.aboutcard-lang [id^="proj-"] {
+  color: #7289da;
+  cursor: pointer;
+}
+.aboutcard-lang [id^="proj-"]:hover {
+  color: #5b75d4;
 }
 .aboutcard-links {
   display: block;

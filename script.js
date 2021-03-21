@@ -1,4 +1,4 @@
-function openLink(lnk) {
+window.openLink = function openLink(lnk) {
   switch (lnk) {
     case "discord":
       window.open("https://discord.gg/fEY6bzKt3U", "_blank");
@@ -19,15 +19,18 @@ function openLink(lnk) {
       window.open("https://www.twitch.tv/alexmeow4560", "_blank");
       break;
     case "instagram":
-      window.open("https://www.instagram.com/meowcatpersonthing/", "_blank");
+      window.open("https://www.instagram.com/meowcatpersonthing", "_blank");
       break;
     case "steam":
       window.open("https://steamcommunity.com/id/ALEXMEOW4560", "_blank");
       break;
+    case "mmrb":
+      window.open("http://moomooreborn.io", "_blank");
+      break;
     default:
       alert("NO");
   }
-}
+};
 
 window.onload = function () {
   setTimeout(function () {
