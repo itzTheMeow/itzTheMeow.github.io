@@ -103,6 +103,7 @@ a:hover {
 .aboutcard-links * {
   cursor: pointer;
   margin-left: 2px;
+  display: inline-block;
 }
 
 [lang-quality="5"] {
