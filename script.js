@@ -1,7 +1,7 @@
 window.openLink = function openLink(lnk) {
   switch (lnk) {
     case "discord":
-      window.open("https://discord.gg/fEY6bzKt3U", "_blank");
+      window.open("https://discord.gg/McsbWXWt2T", "_blank");
       break;
     case "github":
       window.open("https://github.com/itzTheMeow", "_blank");
