@@ -27,6 +27,9 @@ window.openLink = function openLink(lnk) {
     case "mmrb":
       window.open("http://moomooreborn.io", "_blank");
       break;
+    case "mch":
+      window.open("http://themeow.ml/noa-mc/noagame/build/index.html", "_blank");
+      break;
     default:
       alert("NO");
   }
