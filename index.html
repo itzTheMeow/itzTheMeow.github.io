@@ -33,7 +33,7 @@
     >
       <div class="aboutcard-title">Meow</div>
       <div class="aboutcard-text">Hi! I'm Meow. I make cool stuff.</div>
-      <div style="float: left">
+      <div class="aboutcard-sub" style="float: left">
         <div class="aboutcard-subtitle">Skills I Have</div>
         <div
           class="aboutcard-lang"
@@ -45,7 +45,7 @@
           id="langs"
         ></div>
       </div>
-      <div style="float: right">
+      <div class="aboutcard-sub" style="float: right">
         <div class="aboutcard-subtitle">My Projects</div>
         <div
           class="aboutcard-lang"
@@ -62,9 +62,11 @@
   </body>
   <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
   <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="./aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({
+      anchorPlacement: "top-center",
+    });
   </script>
   <script src="./script.js"></script>
 </html>
