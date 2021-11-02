@@ -56,6 +56,26 @@ const projects = {
     icon: "https://themeow.ml/noa-mc/noagame/build/img/blocks/grass_side.png",
     link: "https://themeow.ml/noa-mc/noagame/build/index.html",
   },
+  ytmusic: {
+    name: "YTMusic",
+    icon: "https://github.com/itzTheMeow/YTMusic/raw/main/client/logo.png",
+    link: "https://github.com/itzTheMeow/YTMusic",
+  },
+  shaker: {
+    name: "Window Shaker",
+    icon: "",
+    link: "https://github.com/itzTheMeow/window-shaker",
+  },
+  mcmd: {
+    name: "mcommand.js",
+    icon: "",
+    link: "https://github.com/itzTheMeow/mcommand.js",
+  },
+  tdsc: {
+    name: "TDSClient",
+    icon: "",
+    link: "https://github.com/itzTheMeow/tdsclient",
+  },
 };
 
 window.onload = function () {
@@ -84,7 +104,7 @@ window.onload = function () {
   data-aos-delay="${appearDelay}"
   onclick="window.open('${proj.link}', '_blank')"
 >
-  <img src="${proj.icon}" /> ${proj.name}
+  <img src="${proj.icon || "https://github.com/fluidicon.png"}" /> ${proj.name}
 </div>`.trim();
       document.getElementById("projs").innerHTML += pHTML;
       appearDelay += appearStep;
