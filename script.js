@@ -1,34 +1,3 @@
-window.openLink = function openLink(lnk) {
-  switch (lnk) {
-    case "discord":
-      window.open("https://discord.gg/McsbWXWt2T", "_blank");
-      break;
-    case "github":
-      window.open("https://github.com/itzTheMeow", "_blank");
-      break;
-    case "youtube":
-      window.open("https://www.youtube.com/channel/UCWANi1TTqUP1ar4VTlOrqDA", "_blank");
-      break;
-    case "reddit":
-      window.open("https://www.reddit.com/user/itzTheMeow_", "_blank");
-      break;
-    case "twitter":
-      window.open("https://twitter.com/ALEXMEOW4560", "_blank");
-      break;
-    case "twitch":
-      window.open("https://www.twitch.tv/alexmeow4560", "_blank");
-      break;
-    case "instagram":
-      window.open("https://www.instagram.com/meowcatpersonthing", "_blank");
-      break;
-    case "steam":
-      window.open("https://steamcommunity.com/id/ALEXMEOW4560", "_blank");
-      break;
-    default:
-      alert("NO");
-  }
-};
-
 const langs = {
   js: { name: "JavaScript", icon: "b_js-square", level: 5 },
   html: { name: "HTML", icon: "b_html5", level: 5 },
@@ -77,10 +46,53 @@ const projects = {
     link: "https://github.com/itzTheMeow/tdsclient",
   },
 };
+const links = {
+  discord: {
+    icon: "b_discord",
+    msg: "Join my Discord server!",
+    link: "https://discord.gg/McsbWXWt2T",
+  },
+  github: {
+    icon: "b_github",
+    msg: "Check out my GitHub for random projects.",
+    link: "https://github.com/itzTheMeow",
+  },
+  youtube: {
+    icon: "b_youtube",
+    msg: "See my <s>dead</s> YouTube channel.",
+    link: "https://www.youtube.com/channel/UCWANi1TTqUP1ar4VTlOrqDA",
+  },
+  reddit: {
+    icon: "b_reddit",
+    msg: "Stalk me on Reddit.",
+    link: "https://www.reddit.com/user/itzTheMeow_",
+  },
+  twitter: {
+    icon: "b_twitter",
+    msg: "See me do absolutely nothing on Twitter.",
+    link: "https://twitter.com/ALEXMEOW4560",
+  },
+  twitch: {
+    icon: "b_twitch",
+    msg: "See me stream nothing on Twitch.",
+    link: "https://www.twitch.tv/alexmeow4560",
+  },
+  instagram: {
+    icon: "b_instagram",
+    msg: "See me post nothing on Instagram.",
+    link: "https://www.instagram.com/meowcatpersonthing",
+  },
+  steam: {
+    icon: "b_steam",
+    msg: "See my imaginary game library.",
+    link: "https://steamcommunity.com/id/ALEXMEOW4560",
+  },
+};
 
 window.onload = function () {
   let appearDelay = 1100;
   let appearStep = 50;
+
   Object.keys(langs).forEach((l) => {
     let lang = langs[l];
     let lHTML = `
@@ -90,6 +102,7 @@ window.onload = function () {
     document.getElementById("langs").innerHTML += lHTML;
     appearDelay += appearStep;
   });
+
   Object.keys(projects)
     .sort((a, b) => {
       return projects[a].name.toLowerCase() > projects[b].name.toLowerCase() ? 1 : -1;
@@ -110,75 +123,67 @@ window.onload = function () {
       appearDelay += appearStep;
     });
 
-  setTimeout(function () {
-    document.querySelectorAll("[lang-quality]").forEach((lang) => {
-      let id = "tp" + Math.floor(Math.random() * 100000);
-      lang.id = id;
+  appearDelay = 1100 - appearStep * 2;
+  Object.keys(links).forEach((l) => {
+    let link = links[l];
+    let lHTML = `
+<div
+  id="lnk-${l}"
+  data-aos="zoom-out"
+  data-aos-delay="${appearDelay}"
+  data-aos-duration="750"
+  data-aos-easing="ease-out-in"
+  data-aos-once="true"
+>
+  <i
+    class="fa${link.icon.split("_").join(" fa-")}"
+    onclick="window.open('${link.link}', '_blank')"
+  >
+  </i>
+</div>`.trim();
+    document.getElementById("links").innerHTML += lHTML;
+    setTimeout(function () {
+      tippy(`#lnk-${l}`, {
+        content: link.msg,
+        allowHTML: true,
+        duration: [300, 0],
+      });
+    }, 1000);
+    appearDelay += 50;
+  });
 
-      let quality = Number(lang.getAttribute("lang-quality"));
+  document.querySelectorAll("[lang-quality]").forEach((lang) => {
+    let id = "tp" + Math.floor(Math.random() * 100000);
+    lang.id = id;
 
-      let content = "Unknown";
-      switch (quality) {
-        case 5:
-          content = "Master (5/5)";
-          break;
-        case 4:
-          content = "Proficient (4/5)";
-          break;
-        case 3:
-          content = "Good (3/5)";
-          break;
-        case 2:
-          content = "Beginner (2/5)";
-          break;
-        case 1:
-          content = "Not too Great (1/5)";
-          break;
-      }
+    let quality = Number(lang.getAttribute("lang-quality"));
 
-      content = `<span lang-quality="${quality}">${content}</span>`;
+    let content = "Unknown";
+    switch (quality) {
+      case 5:
+        content = "Master (5/5)";
+        break;
+      case 4:
+        content = "Proficient (4/5)";
+        break;
+      case 3:
+        content = "Good (3/5)";
+        break;
+      case 2:
+        content = "Beginner (2/5)";
+        break;
+      case 1:
+        content = "Not too Great (1/5)";
+        break;
+    }
 
+    content = `<span lang-quality="${quality}">${content}</span>`;
+    setTimeout(function () {
       tippy(`#${id}`, {
         content: content || "Unknown",
         allowHTML: true,
         duration: [300, 0],
       });
-    });
-    document.querySelectorAll("[tooltip-for]").forEach((tt) => {
-      let tipFor = tt.getAttribute("tooltip-for");
-      let content = "Click It";
-
-      switch (tipFor) {
-        case "discord":
-          content = "Join my Discord server!";
-          break;
-        case "github":
-          content = "Check out my GitHub for random projects.";
-          break;
-        case "youtube":
-          content = "See my <s>dead</s> YouTube channel.";
-          break;
-        case "reddit":
-          content = "Stalk me on Reddit.";
-          break;
-        case "twitter":
-          content = "See me do absolutely nothing on Twitter.";
-          break;
-        case "twitch":
-          content = "See me stream nothing on Twitch.";
-          break;
-        case "instagram":
-          content = "See me post nothing on Instagram.";
-          break;
-        case "steam":
-          content = "See my imaginary game library.";
-          break;
-      }
-      tippy(`[tooltip-for="${tipFor}"]`, {
-        content: content || "Click It",
-        allowHTML: true,
-        duration: [300, 0],
-      });
-    });
-  }, 1000);
+    }, 1000);
+  });
 };
