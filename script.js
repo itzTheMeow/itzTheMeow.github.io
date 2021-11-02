@@ -46,10 +46,15 @@ const projects = {
     icon: "http://moomooreborn.io/img/icons/favicon.png",
     link: "http://moomooreborn.io",
   },
+  sand: {
+    name: "Sand Drawings",
+    icon: "https://themeow.ml/sand-drawings/site/favicon.ico",
+    link: "https://themeow.ml/sand-drawings/site",
+  },
   mch: {
     name: "MCHangout",
-    icon: "http://themeow.ml/noa-mc/noagame/build/img/blocks/grass_side.png",
-    link: "http://themeow.ml/noa-mc/noagame/build/index.html",
+    icon: "https://themeow.ml/noa-mc/noagame/build/img/blocks/grass_side.png",
+    link: "https://themeow.ml/noa-mc/noagame/build/index.html",
   },
 };
 
@@ -65,9 +70,13 @@ window.onload = function () {
     document.getElementById("langs").innerHTML += lHTML;
     appearDelay += appearStep;
   });
-  Object.keys(projects).forEach((p) => {
-    let proj = projects[p];
-    let pHTML = `
+  Object.keys(projects)
+    .sort((a, b) => {
+      return projects[a].name.toLowerCase() > projects[b].name.toLowerCase() ? 1 : -1;
+    })
+    .forEach((p) => {
+      let proj = projects[p];
+      let pHTML = `
 <div
   id="proj-${p}"
   class="aboutcard-lang-entry"
@@ -77,9 +86,9 @@ window.onload = function () {
 >
   <img src="${proj.icon}" /> ${proj.name}
 </div>`.trim();
-    document.getElementById("projs").innerHTML += pHTML;
-    appearDelay += appearStep;
-  });
+      document.getElementById("projs").innerHTML += pHTML;
+      appearDelay += appearStep;
+    });
 
   setTimeout(function () {
     document.querySelectorAll("[lang-quality]").forEach((lang) => {
