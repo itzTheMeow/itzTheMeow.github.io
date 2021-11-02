@@ -58,7 +58,7 @@ const projects = {
   },
   ytmusic: {
     name: "YTMusic",
-    icon: "https://github.com/itzTheMeow/YTMusic/raw/main/client/logo.png",
+    icon: "",
     link: "https://github.com/itzTheMeow/YTMusic",
   },
   shaker: {
