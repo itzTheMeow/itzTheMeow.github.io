@@ -24,18 +24,63 @@ window.openLink = function openLink(lnk) {
     case "steam":
       window.open("https://steamcommunity.com/id/ALEXMEOW4560", "_blank");
       break;
-    case "mmrb":
-      window.open("http://moomooreborn.io", "_blank");
-      break;
-    case "mch":
-      window.open("http://themeow.ml/noa-mc/noagame/build/index.html", "_blank");
-      break;
     default:
       alert("NO");
   }
 };
 
+const langs = {
+  js: { name: "JavaScript", icon: "b_js-square", level: 5 },
+  html: { name: "HTML", icon: "b_html5", level: 5 },
+  css: { name: "CSS/SCSS", icon: "b_css3-alt", level: 5 },
+  py: { name: "Python", icon: "b_python", level: 3 },
+  nodejs: { name: "Node.js", icon: "b_node-js", level: 5 },
+  djs: { name: "Discord.js", icon: "b_discord", level: 5 },
+  ahk: { name: "AutoHotKey", icon: "s_keyboard", level: 4 },
+  java: { name: "Java", icon: "b_java", level: 3 },
+  cpp: { name: "C++", icon: "s_plus-square", level: 1 },
+};
+const projects = {
+  mmrb: {
+    name: "MooMoo Reborn",
+    icon: "http://moomooreborn.io/img/icons/favicon.png",
+    link: "http://moomooreborn.io",
+  },
+  mch: {
+    name: "MCHangout",
+    icon: "http://themeow.ml/noa-mc/noagame/build/img/blocks/grass_side.png",
+    link: "http://themeow.ml/noa-mc/noagame/build/index.html",
+  },
+};
+
 window.onload = function () {
+  let appearDelay = 1100;
+  let appearStep = 50;
+  Object.keys(langs).forEach((l) => {
+    let lang = langs[l];
+    let lHTML = `
+<div id="lang-${l}" class="aboutcard-lang-entry" data-aos="flip-up" data-aos-delay="${appearDelay}">
+  <i class="fa${lang.icon.split("_").join(" fa-")}" lang-quality="${lang.level}"></i> ${lang.name}
+</div>`.trim();
+    document.getElementById("langs").innerHTML += lHTML;
+    appearDelay += appearStep;
+  });
+  Object.keys(projects).forEach((p) => {
+    let proj = projects[p];
+    let pHTML = `
+<div
+  id="proj-${p}"
+  class="aboutcard-lang-entry"
+  data-aos="flip-up"
+  data-aos-delay="${appearDelay}"
+  onclick="window.open('${proj.link}', '_blank')"
+>
+  <img src="${proj.icon}" /> ${proj.name}
+</div>`.trim();
+    document.getElementById("projs").innerHTML += pHTML;
+    appearDelay += appearStep;
+  });
+
   setTimeout(function () {
     document.querySelectorAll("[lang-quality]").forEach((lang) => {
       let id = "tp" + Math.floor(Math.random() * 100000);
