@@ -20,15 +20,6 @@
   --intensity-3: #fffc35;
   --intensity-2: #ffa135;
   --intensity-1: #ff5335;
-
-  --discord: #7289da;
-  --github: #171515;
-  --youtube: #ff0000;
-  --reddit: #ff4500;
-  --twitter: #1da1f3;
-  --twitch: #9146ff;
-  --instagram: #000000;
-  --steam: #000000;
 }
 
 body {
@@ -120,29 +111,4 @@ a:hover {
 }
 [lang-quality="1"] {
   color: var(--intensity-1);
-}
-
-.aboutcard-links .fa-discord {
-  color: var(--discord);
-}
-.aboutcard-links .fa-github {
-  color: var(--github);
-}
-.aboutcard-links .fa-youtube {
-  color: var(--youtube);
-}
-.aboutcard-links .fa-reddit {
-  color: var(--reddit);
-}
-.aboutcard-links .fa-twitter {
-  color: var(--twitter);
-}
-.aboutcard-links .fa-twitch {
-  color: var(--twitch);
-}
-.aboutcard-links .fa-instagram {
-  color: var(--instagram);
-}
-.aboutcard-links .fa-steam {
-  color: var(--steam);
 }

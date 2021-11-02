@@ -51,41 +51,49 @@ const links = {
     icon: "b_discord",
     msg: "Join my Discord server!",
     link: "https://discord.gg/McsbWXWt2T",
+    color: "#7289da",
   },
   github: {
     icon: "b_github",
     msg: "Check out my GitHub for random projects.",
     link: "https://github.com/itzTheMeow",
+    color: "#171515",
   },
   youtube: {
     icon: "b_youtube",
     msg: "See my <s>dead</s> YouTube channel.",
     link: "https://www.youtube.com/channel/UCWANi1TTqUP1ar4VTlOrqDA",
+    color: "#ff0000",
   },
   reddit: {
     icon: "b_reddit",
     msg: "Stalk me on Reddit.",
     link: "https://www.reddit.com/user/itzTheMeow_",
+    color: "#ff4500",
   },
   twitter: {
     icon: "b_twitter",
     msg: "See me do absolutely nothing on Twitter.",
     link: "https://twitter.com/ALEXMEOW4560",
+    color: "#1da1f3",
   },
   twitch: {
     icon: "b_twitch",
     msg: "See me stream nothing on Twitch.",
     link: "https://www.twitch.tv/alexmeow4560",
+    color: "#9146ff",
   },
   instagram: {
     icon: "b_instagram",
     msg: "See me post nothing on Instagram.",
     link: "https://www.instagram.com/meowcatpersonthing",
+    color: "#000000",
   },
   steam: {
     icon: "b_steam",
     msg: "See my imaginary game library.",
     link: "https://steamcommunity.com/id/ALEXMEOW4560",
+    color: "#000000",
   },
 };
 
@@ -137,6 +145,7 @@ window.onload = function () {
 >
   <i
     class="fa${link.icon.split("_").join(" fa-")}"
+    style="color: ${link.color};"
     onclick="window.open('${link.link}', '_blank')"
   >
   </i>
