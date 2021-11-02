@@ -168,23 +168,11 @@ window.onload = function () {
     let quality = Number(lang.getAttribute("lang-quality"));
 
     let content = "Unknown";
-    switch (quality) {
-      case 5:
-        content = "Master (5/5)";
-        break;
-      case 4:
-        content = "Proficient (4/5)";
-        break;
-      case 3:
-        content = "Good (3/5)";
-        break;
-      case 2:
-        content = "Beginner (2/5)";
-        break;
-      case 1:
-        content = "Not too Great (1/5)";
-        break;
-    }
+    if (quality == 5) content = "Master (5/5)";
+    if (quality == 4) content = "Proficient (4/5)";
+    if (quality == 3) content = "Good (3/5)";
+    if (quality == 2) content = "Beginner (2/5)";
+    if (quality == 1) content = "Not too Great (1/5)";
 
     content = `<span lang-quality="${quality}">${content}</span>`;
     setTimeout(function () {
