@@ -373,6 +373,7 @@
                   e.options.id && V("aos:in:" + e.options.id, i),
                   (e.animated = !1));
               });
+          // patch here applied so it always animates regardless of scroll
           n.mirror && t >= o.out && !n.once && false
             ? a()
             : true
